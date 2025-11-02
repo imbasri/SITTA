@@ -1,0 +1,46 @@
+<section class="catalog-section">
+    <div class="page-header">
+        <h2>📚 Katalog Buku UT</h2>
+        <p>Pilih buku sesuai kebutuhan studi Anda</p>
+    </div>
+
+    <div class="catalog-filters">
+        <div class="filter-group">
+            <label for="semesterFilter">Semester:</label>
+            <select id="semesterFilter" onchange="filterBooks()">
+                <option value="">Semua Semester</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="prodiFilter">Program Studi:</label>
+            <select id="prodiFilter" onchange="filterBooks()">
+                <option value="">Semua Prodi</option>
+                <option value="Sistem Informasi">Sistem Informasi</option>
+                <option value="Manajemen">Manajemen</option>
+                <option value="Akuntansi">Akuntansi</option>
+                <option value="Administrasi Bisnis">Administrasi Bisnis</option>
+                <option value="Administrasi Negara">Administrasi Negara</option>
+                <option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
+                <option value="Ilmu Sosial">Ilmu Sosial</option>
+            </select>
+        </div>
+
+        <div class="filter-group search-group">
+            <label for="searchBooks">Cari Buku:</label>
+            <input type="text" id="searchBooks" placeholder="Cari judul atau kode buku..." oninput="filterBooks()">
+        </div>
+    </div>
+
+    <div class="books-grid" id="booksGrid">
+        <!-- Books will be loaded here by JavaScript -->
+    </div>
+</section>

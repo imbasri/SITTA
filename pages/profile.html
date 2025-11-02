@@ -1,0 +1,107 @@
+<section class="profile-section">
+    <div class="page-header">
+        <h2>👤 My Profile</h2>
+        <p>Kelola informasi profil dan alamat pengiriman</p>
+    </div>
+
+    <div class="profile-container">
+        <!-- Personal Info -->
+        <div class="profile-card">
+            <h3>Informasi Pribadi</h3>
+            <form id="profileForm" onsubmit="return updateProfile(event)">
+                <div class="form-field">
+                    <label>Nama Lengkap <span class="required">*</span></label>
+                    <input type="text" id="profileNama" required>
+                    <span class="error-message" id="profileNama-error"></span>
+                </div>
+                
+                <div class="form-field">
+                    <label>NIM</label>
+                    <input type="text" id="profileNIM" readonly>
+                </div>
+                
+                <div class="form-field">
+                    <label>Email</label>
+                    <input type="email" id="profileEmail" readonly>
+                </div>
+                
+                <div class="form-field">
+                    <label>Nomor Telepon <span class="required">*</span></label>
+                    <input type="tel" id="profileTelepon" required placeholder="08xxxxxxxxxx">
+                    <span class="error-message" id="profileTelepon-error"></span>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            </form>
+        </div>
+
+        <!-- Addresses -->
+        <div class="profile-card">
+            <div class="card-header">
+                <h3>Alamat Pengiriman</h3>
+                <button class="btn btn-sm btn-primary" onclick="toggleAddressForm()">+ Tambah Alamat</button>
+            </div>
+            
+            <!-- Add Address Form (Hidden by default) -->
+            <div id="addAddressForm" style="display: none; margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 10px; border: 2px dashed #003d82;">
+                <h4 style="margin: 0 0 15px 0; color: #003d82;">📍 Form Alamat Baru</h4>
+                <form onsubmit="return saveAddressInline(event)">
+                    <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <div class="form-field">
+                            <label>Label Alamat <span class="required">*</span></label>
+                            <input type="text" id="newAddressLabel" placeholder="Contoh: Rumah, Kantor" required>
+                            <span class="error-message" id="newAddressLabel-error"></span>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label>Nama Penerima <span class="required">*</span></label>
+                            <input type="text" id="newAddressRecipient" placeholder="Nama lengkap penerima" required>
+                            <span class="error-message" id="newAddressRecipient-error"></span>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label>Nomor Telepon <span class="required">*</span></label>
+                            <input type="tel" id="newAddressPhone" placeholder="08xxxxxxxxxx" required>
+                            <span class="error-message" id="newAddressPhone-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-field" style="margin-top: 15px;">
+                        <label>Alamat Lengkap <span class="required">*</span></label>
+                        <textarea id="newAddressStreet" rows="3" placeholder="Jalan, nomor rumah, RT/RW, kelurahan" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; resize: vertical;"></textarea>
+                        <span class="error-message" id="newAddressStreet-error"></span>
+                    </div>
+                    
+                    <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div class="form-field">
+                            <label>Kota/Kabupaten <span class="required">*</span></label>
+                            <input type="text" id="newAddressCity" placeholder="Contoh: Jakarta Pusat" required>
+                            <span class="error-message" id="newAddressCity-error"></span>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label>Provinsi <span class="required">*</span></label>
+                            <input type="text" id="newAddressProvince" placeholder="Contoh: DKI Jakarta" required>
+                            <span class="error-message" id="newAddressProvince-error"></span>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label>Kode Pos <span class="required">*</span></label>
+                            <input type="text" id="newAddressPostalCode" placeholder="12345" maxlength="5" required>
+                            <span class="error-message" id="newAddressPostalCode-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button type="submit" class="btn btn-primary" style="flex: 1;">💾 Simpan Alamat</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelAddressForm()" style="flex: 1;">❌ Batal</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="addressList">
+                <!-- Addresses will be loaded here -->
+            </div>
+        </div>
+    </div>
+</section>

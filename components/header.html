@@ -1,0 +1,73 @@
+<!-- Sidebar Navigation -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <img src="https://www.ut.ac.id/wp-content/uploads/2023/08/UT_Header.webp" alt="Logo UT" class="sidebar-logo">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    
+    <div class="sidebar-brand">
+        <h2>🎓 SITTA</h2>
+        <p>Sistem Informasi Toko Buku Terbuka</p>
+    </div>
+    
+    <nav class="sidebar-nav">
+        <a href="#catalog" class="nav-item active" onclick="loadPage('catalog')" data-page="catalog">
+            <span class="nav-icon">📚</span>
+            <span class="nav-text">Katalog Buku</span>
+        </a>
+        <a href="#cart" class="nav-item user-only" onclick="loadPage('cart')" data-page="cart">
+            <span class="nav-icon">🛒</span>
+            <span class="nav-text">Keranjang</span>
+            <span class="nav-badge" id="cartBadge">0</span>
+        </a>
+        <a href="#history" class="nav-item public-page" onclick="loadPage('history')" data-page="history">
+            <span class="nav-icon">📋</span>
+            <span class="nav-text">Lacak Pesanan</span>
+        </a>
+        <a href="#shipping" class="nav-item public-page" onclick="loadPage('shipping')" data-page="shipping">
+            <span class="nav-icon">🚚</span>
+            <span class="nav-text">Cek Pengiriman</span>
+        </a>
+        <a href="#profile" class="nav-item user-only" onclick="loadPage('profile')" data-page="profile">
+            <span class="nav-icon">👤</span>
+            <span class="nav-text">My Profile</span>
+        </a>
+        <a href="#admin" class="nav-item admin-only" id="adminNavLink" style="display: none;" onclick="loadPage('admin')" data-page="admin">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Admin</span>
+        </a>
+    </nav>
+    
+    <div class="sidebar-footer">
+        <div class="user-profile">
+            <div class="user-avatar" id="userAvatarSidebar">U</div>
+            <div class="user-info">
+                <div class="user-name" id="userNameSidebar">User</div>
+                <div class="user-role" id="userRole">Mahasiswa</div>
+            </div>
+        </div>
+        <button class="btn-logout" onclick="logout()">
+            <span>🚪</span> Keluar
+        </button>
+    </div>
+</aside>
+
+<!-- Top Header (Mobile) -->
+<header class="top-header">
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="header-title">
+        <h1>SITTA</h1>
+    </div>
+    <div class="header-cart">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count-mobile" id="cartCountMobile">0</span>
+    </div>
+</header>

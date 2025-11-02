@@ -1,0 +1,32 @@
+<section class="shipping-section">
+    <div class="page-header">
+        <h2>🚚 Cek Pengiriman</h2>
+        <p>Lacak status pengiriman pesanan Anda</p>
+    </div>
+
+    <!-- Public Search Box -->
+    <div class="shipping-search" id="shippingSearch">
+        <div class="search-card">
+            <h3>🔍 Lacak Paket Anda</h3>
+            <p style="color: #666; margin-bottom: 1rem;">Masukkan kode pesanan untuk melacak status pengiriman</p>
+            <form onsubmit="searchShipping(event)" style="display: flex; gap: 1rem;">
+                <input 
+                    type="text" 
+                    id="shippingSearchInput" 
+                    placeholder="Masukkan Kode Pesanan (contoh: ORD1730534567890)" 
+                    style="flex: 1; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;"
+                    required
+                >
+                <button type="submit" class="btn btn-primary" style="padding: 0.75rem 2rem;">Lacak</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Search Result (hidden by default) -->
+    <div id="searchResult" style="display: none; margin-top: 2rem;"></div>
+
+    <!-- User's Shipping List (only for logged in users) -->
+    <div class="shipping-container" id="shippingContainer">
+        <!-- Shipping info will be loaded here for logged in users -->
+    </div>
+</section>

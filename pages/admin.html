@@ -1,0 +1,115 @@
+<section class="admin-section">
+    <div class="page-header">
+        <h2>⚙️ Admin Dashboard</h2>
+        <p>Kelola buku dan pesanan</p>
+    </div>
+
+    <div class="admin-tabs">
+        <button class="admin-tab-btn active" onclick="showAdminTab('books')">📚 Kelola Buku</button>
+        <button class="admin-tab-btn" onclick="showAdminTab('orders')">📦 Kelola Pesanan</button>
+    </div>
+
+    <!-- Tab: Kelola Buku -->
+    <div id="adminBooksTab" class="admin-tab-content">
+        <div class="admin-header">
+            <h3>Katalog Buku</h3>
+            <button class="btn btn-primary" onclick="showAddBookForm()">+ Tambah Buku Baru</button>
+        </div>
+
+        <!-- Search and Filter for Books -->
+        <div class="admin-search-filter">
+            <div class="search-box">
+                <input type="text" id="adminBookSearch" placeholder="🔍 Cari kode, judul, atau prodi..." oninput="filterAdminBooks()">
+            </div>
+            <div class="filter-box">
+                <select id="adminSemesterFilter" onchange="filterAdminBooks()">
+                    <option value="">Semua Semester</option>
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5">Semester 5</option>
+                    <option value="6">Semester 6</option>
+                    <option value="7">Semester 7</option>
+                    <option value="8">Semester 8</option>
+                </select>
+            </div>
+            <div class="filter-box">
+                <select id="adminProdiFilter" onchange="filterAdminBooks()">
+                    <option value="">Semua Prodi</option>
+                    <option value="Sistem Informasi">Sistem Informasi</option>
+                    <option value="Manajemen">Manajemen</option>
+                    <option value="Akuntansi">Akuntansi</option>
+                    <option value="Administrasi Bisnis">Administrasi Bisnis</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Judul</th>
+                        <th>Semester</th>
+                        <th>Harga</th>
+                        <th>Stok</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="adminBooksList">
+                    <!-- Books will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Tab: Kelola Pesanan -->
+    <div id="adminOrdersTab" class="admin-tab-content" style="display: none;">
+        <div class="admin-header">
+            <h3>Pesanan & Pengiriman</h3>
+        </div>
+
+        <!-- Search and Filter for Orders -->
+        <div class="admin-search-filter">
+            <div class="search-box">
+                <input type="text" id="adminOrderSearch" placeholder="🔍 Cari no. pesanan, pembeli, atau resi..." oninput="filterAdminOrders()">
+            </div>
+            <div class="filter-box">
+                <select id="adminStatusFilter" onchange="filterAdminOrders()">
+                    <option value="">Semua Status</option>
+                    <option value="pending">Menunggu Pembayaran</option>
+                    <option value="paid">Sudah Dibayar</option>
+                    <option value="processing">Sedang Diproses</option>
+                    <option value="shipped">Dikirim</option>
+                    <option value="delivered">Terkirim</option>
+                </select>
+            </div>
+            <div class="filter-box">
+                <select id="adminPaymentFilter" onchange="filterAdminOrders()">
+                    <option value="">Semua Pembayaran</option>
+                    <option value="paid">Lunas</option>
+                    <option value="unpaid">Belum Bayar</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>No. Pesanan</th>
+                        <th>Pembeli</th>
+                        <th>No. Resi</th>
+                        <th>Status</th>
+                        <th>Tanggal</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="adminOrdersList">
+                    <!-- Orders will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
