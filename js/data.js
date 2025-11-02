@@ -51,17 +51,6 @@ const UTBooks = [
     
     // Semester 6
     {
-        code: "MSIM4601",
-        title: "Pemrograman Mobile",
-        author: "Dr. Yudho Giri Sucinto, S.Kom., M.Kom.",
-        prodi: "Sistem Informasi",
-        semester: 6,
-        price: 92000,
-        stock: 15,
-        image: "https://pustaka.ut.ac.id/lib/wp-content/uploads/2017/01/MSIM4601.jpg",
-        description: "Membahas pengembangan aplikasi Android/iOS, UI/UX mobile, API integration, database mobile, push notification, dan deployment."
-    },
-    {
         code: "EKMA4312",
         title: "Ekonomi Manajerial",
         author: "Dr. Edy Sukarno, S.E., M.Si.",
@@ -74,17 +63,7 @@ const UTBooks = [
     },
     
     // Semester 7
-    {
-        code: "MSIM4701",
-        title: "Tata Kelola dan Audit Sistem Informasi",
-        author: "Dr. Sfenrianto, S.Kom., M.M.S.I.",
-        prodi: "Sistem Informasi",
-        semester: 7,
-        price: 87000,
-        stock: 17,
-        image: "https://pustaka.ut.ac.id/lib/wp-content/uploads/2017/01/MSIM4701.jpg",
-        description: "Membahas IT governance, COBIT framework, IT audit, compliance, risk assessment, dan best practices tata kelola TI."
-    },
+    
     // Semester 8
 
     // ========== MANAJEMEN ==========
